@@ -1,0 +1,16 @@
+apiVersion: extensions/v1bets1
+kind: Ingress
+metadata:
+  name: jquery-ingress
+  namespace: jquery
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: (url of webpage)
+    http:
+      paths:
+      - path:
+        backend:
+          serviceName: k8s-jquery-svc
+          ServicePort: 80
